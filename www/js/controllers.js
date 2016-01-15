@@ -5,7 +5,6 @@ angular.module('starter.controllers', ['ionic'])
 .constant('FORECASTIO_APIKEY', 'a52853f6b4cb5a11f44d22cb01949a6d')
 .controller('HomeCtrl', function($scope, $state, Weather, DataStore) {
     //read default settings into scope
-    console.log("hello from homeCtrl")
     console.log('enter HomeCtrl', DataStore.city);
     $scope.city  = DataStore.city;
     var latitude  =  DataStore.latitude;
@@ -44,42 +43,18 @@ angular.module('starter.controllers', ['ionic'])
     DataStore.setLongitude(lgn);  // go to factory and set new longitude
     console.log("exit 'changeCity'", DataStore.city);
 
-
-
-// *************************************************************//
-// COPIED CODE FROM 'HOMECTRL' CONTROLLER ABOVE //
-    //read default settings into scope
-    // console.log('enter HomeCtrl', DataStore.city);
-    // $scope.city  = DataStore.city;
-    // var latitude  =  DataStore.latitude;
-    // var longitude = DataStore.longitude;
-    // console.log($scope.city);
-
-    // //calls getCurrentWeather method in factory>‘Weather’
-    // Weather.getCurrentWeather(latitude,longitude).then(function(data) {
-    //   $scope.current = data.data;
-    //   console.log('Got Current Weather!', $scope.current);
-    //   //debugger;
-    // }, function(error) {
-    //   alert('Unable to get current conditions');
-    //   console.error(error);
-    // });
-// END COPIED CODE ('HOMECTRL') //
-// *************************************************************//
-
     $state.go('tab.home');
   }
 })
 
 
-
-
-
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+
+// SETTINGS
 .controller('SettingsCtrl', function($scope) {
     //manages app settings
 })
+
 // ICONS
 .controller( 'WeatherCtrl', function ( $scope ) {
     /*
@@ -96,4 +71,4 @@ angular.module('starter.controllers', ['ionic'])
         }
     };
 });
- 
+
