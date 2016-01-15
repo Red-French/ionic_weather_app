@@ -1,1 +1,1 @@
-# ionic_weather_app
+# ionic_weather
