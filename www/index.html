@@ -17,20 +17,29 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
+
+    <script src="/lib/skycons/skycons.js"></script>
+    <script src="/lib/angular-skycons/angular-skycons.js"></script>
+
+    <script src="js/services.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+
   </head>
   <body ng-app="starter">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionico!</h1>
+        <h1 class="title">Ionic</h1>
       </ion-header-bar>
       <ion-content>
       <h1>{{starter.temperature}}</h1>
 <!--       <iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="http://forecast.io/embed/#lat=35.631013&lon=-86.788415&name=Chapel Hill, TN"> </iframe> -->
+
+<skycon icon="CurrentWeather.forecast.icon" size="CurrentWeather.forecast.iconSize"></skycon>
+<skycon icon="CurrentWeather.forecast.icon"></skycon>
+<skycon icon="CurrentWeather.forecast.icon"></skycon>
+
       <ion-nav-view></ion-nav-view>
         <!-- <h1>67°F</h1> -->
       </ion-content>

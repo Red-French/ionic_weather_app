@@ -1,19 +1,19 @@
-'use strict';
+// 'use strict';
 
-var forecastioWeather = ['$q', '$resource', '$http', 'FORECASTIO_KEY', 
-  function($q, $resource, $http, FORECASTIO_KEY) {
-  var url = 'https://api.forecast.io/forecast/' + FORECASTIO_KEY + '/';
+var forecastioWeather = ['$q', '$resource', '$http', 'FORECASTIO_APIKEY', 
+  function($q, $resource, $http, FORECASTIO_APIKEY) {
+  var url = 'https://api.forecast.io/forecast/' + FORECASTIO_APIKEY + '/';
 
   var weatherResource = $resource(url, {
-    callback: 'JSON_CALLBACK',
+      callback: 'JSON_CALLBACK',  // JSONP data will be sent here (AngularJS callback for JSONP is always called this)
   }, {
     get: {
-      method: 'JSONP'
+      method: 'JSONP'  // JSONP enables cross domain requests (wraps data in a javascript function)
     }
   });
 
   return {
-    //getAtLocation: function(lat, lng) {
+    // called from controller 'HomeCtrl'
     getCurrentWeather: function(lat, lng) {
       return $http.jsonp(url + lat + ',' + lng + '?callback=JSON_CALLBACK');
     }
@@ -36,30 +36,36 @@ var cities = [
       return cities;
     },
     get: function(cityId) {
-      // Simple index lookup
+      // index lookup
+
       return cities[cityId];
     }
   }
 }).
 factory('DataStore', function() {
-    //create datastore with default values
     var DataStore = {
         city:       'Chapel Hill, TN',
         latitude:   35.6282,
-        longitude:  86.6962 };
-
-    DataStore.setCity = function (value) {
-       DataStore.city = value;
+        longitude:  86.6962 
+    };
+    console.log("DataStore", DataStore);
+    DataStore.setCity = function (value) {  // called from inside 'changeCity' in controllers.js
+      console.log("enter factory>'setCity' =", DataStore.city);
+       DataStore.city = value;  
+       console.log("exit factory>'setCity' =", DataStore.city);
     };
 
-    DataStore.setLatitude = function (value) {
-       DataStore.longitude = value;
+    DataStore.setLatitude = function (value) {  // called from inside 'changeCity' in controllers.js
+       DataStore.latitude = value;
+       console.log(DataStore.city, "lat", DataStore.latitude);
     };
 
-    DataStore.setLongitude = function (value) {
+    DataStore.setLongitude = function (value) {  // called from inside 'changeCity' in controllers.js
        DataStore.longitude = value;
+       console.log(DataStore.city, "long", DataStore.longitude);
     };
 
     return DataStore;
 })
 .factory('Weather', forecastioWeather);
+
