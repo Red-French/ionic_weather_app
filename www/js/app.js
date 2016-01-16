@@ -48,12 +48,21 @@ $stateProvider
         }
       }
     })
-    .state('tab.settings', {
+    // .state('tab.settings', {
+    //   url: '/settings',
+    //   views: {
+    //     'tab-settings': {
+    //       templateUrl: 'templates/tab-settings.html',
+    //       controller: 'SettingsCtrl'
+    //     }
+    //   }
+    // });
+        .state('tab.settings', {
       url: '/settings',
       views: {
         'tab-settings': {
           templateUrl: 'templates/tab-settings.html',
-          controller: 'SettingsCtrl'
+          controller: 'PopupCtrl'
         }
       }
     });

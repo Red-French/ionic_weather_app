@@ -66,9 +66,9 @@ var skycons = new Skycons({
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
 // SETTINGS
-.controller('SettingsCtrl', function($scope) {
+// .controller('SettingsCtrl', function($scope) {
     //manages app settings
-})
+// })
 
 // ICONS
 .controller( 'WeatherCtrl', function ( $scope ) {
