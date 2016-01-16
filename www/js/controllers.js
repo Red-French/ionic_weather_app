@@ -24,7 +24,7 @@ var skycons = new Skycons({
         forecast: {
             icon: icon,
             iconSize: 115,    // set size of weather icon
-            color: "#6c5848"  // set color of weather icon
+            color: "#aaaaff"  // set color of weather icon
         }
     };
       //debugger;
