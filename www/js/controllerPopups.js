@@ -9,7 +9,7 @@ angular.module('starter.popups', ['ionic'])
    var myPopup = $ionicPopup.show({
      template: '<input type="password" ng-model="data.wifi">',
      title: 'Enter Wi-Fi Password',
-     subTitle: 'Please use normal things',
+     subTitle: 'You have 3 seconds!',
      scope: $scope,
      buttons: [
        { text: 'Cancel' },
