@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'angular-skycons'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.popups', 'angular-skycons'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -62,7 +62,7 @@ $stateProvider
       views: {
         'tab-settings': {
           templateUrl: 'templates/tab-settings.html',
-          controller: 'PopupCtrl'
+          controller: 'SettingsCtrl'
         }
       }
     });

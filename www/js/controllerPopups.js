@@ -1,5 +1,5 @@
-angular.module('mySuperApp', ['ionic'])
-.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+angular.module('starter.popups', ['ionic'])
+.controller('SettingsCtrl',function($scope, $ionicPopup, $timeout) {
 
  // Triggered on a button click, or some other target
  $scope.showPopup = function() {
@@ -36,6 +36,8 @@ angular.module('mySuperApp', ['ionic'])
   };
    // A confirm dialog
    $scope.showConfirm = function() {
+    console.log("'Confirm' click");
+    
      var confirmPopup = $ionicPopup.confirm({
        title: 'Consume Ice Cream',
        template: 'Are you sure you want to eat this ice cream?'
